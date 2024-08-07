@@ -5,23 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:battdamageelt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,10,-202,-190">
-        <ComboBox x:Name="PokeAChoose" HorizontalAlignment="Left" Height="45" Margin="18,50,0,0" VerticalAlignment="Top" Width="237" SelectionChanged="ComboBox_SelectionChanged"/>
-        <ComboBox x:Name="PokeBChoose" HorizontalAlignment="Left" Height="45" Margin="281,50,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="PokeBChoose_SelectionChanged"/>
-        <Label x:Name="PokeADesc" Content="Name:&#xD;&#xA;ID: &#xD;&#xA;Level:&#xD;&#xA;Defence:&#xD;&#xA;Special: &#xD;&#xA;HP:&#xD;&#xA;Type A: &#xD;&#xA;Type: b" HorizontalAlignment="Left" Height="148" Margin="18,132,0,0" VerticalAlignment="Top" Width="165"/>
-        <Label x:Name="PokeBDesc" Content="Name:&#xA;ID: &#xA;Level:&#xA;Defence:&#xA;Special: &#xA;HP:&#xA;Type A: &#xA;Type: b" HorizontalAlignment="Left" Height="148" Margin="281,132,0,0" VerticalAlignment="Top" Width="164"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="24" Margin="94,347,0,0" VerticalAlignment="Top" Width="94" Checked="CheckBox_Checked"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="24" Margin="524,347,0,0" VerticalAlignment="Top" Width="94"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="24" Margin="281,347,0,0" VerticalAlignment="Top" Width="94"/>
-        <ComboBox HorizontalAlignment="Left" Height="29" Margin="110,376,0,0" VerticalAlignment="Top" Width="321"/>
-        <Label Content="Effectiveness:" HorizontalAlignment="Left" Height="24" Margin="18,366,0,0" VerticalAlignment="Top" Width="87"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="646,387,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="77"/>
-        <Label Content="Move effectiveness: (1-255)" HorizontalAlignment="Left" Height="31" Margin="436,376,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.523,0.646"/>
-        <Button Content="FIGHT!" HorizontalAlignment="Left" Height="85" Margin="631,30,0,0" VerticalAlignment="Top" Width="144" Click="Button_Click"/>
-        <Label Content="Attacking Pokemon" HorizontalAlignment="Left" Margin="18,24,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Defending Pokemon" HorizontalAlignment="Left" Margin="281,19,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Maximum:&#xD;&#xA;&#xD;&#xA;Minimum" HorizontalAlignment="Left" Height="139" Margin="631,132,0,0" VerticalAlignment="Top" Width="144"/>
+        Title="MainWindow" Height="450" Width="900" ResizeMode="NoResize">
+    <Grid Margin="10,10,10,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="525*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="PokeAChoose" HorizontalAlignment="Left" Height="45" Margin="18,50,0,0" VerticalAlignment="Top" Width="237" SelectionChanged="ComboBox_SelectionChanged" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="PokeBChoose" HorizontalAlignment="Left" Height="45" Margin="229,50,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="PokeBChoose_SelectionChanged" Grid.Column="1"/>
+        <Label x:Name="PokeADesc" Content="Name:&#xD;&#xA;ID: &#xD;&#xA;Level:&#xD;&#xA;Defence:&#xD;&#xA;Special: &#xD;&#xA;HP:&#xD;&#xA;Type A: &#xD;&#xA;Type: b" HorizontalAlignment="Left" Height="148" Margin="18,132,0,0" VerticalAlignment="Top" Width="165" Grid.ColumnSpan="2"/>
+        <Label x:Name="PokeBDesc" Content="Name:&#xA;ID: &#xA;Level:&#xA;Defence:&#xA;Special: &#xA;HP:&#xA;Type A: &#xA;Type: b" HorizontalAlignment="Left" Height="148" Margin="229,132,0,0" VerticalAlignment="Top" Width="164" Grid.Column="1"/>
+        <CheckBox x:Name="chkSTAB" Content="Same Type Attack Bonus" HorizontalAlignment="Left" Height="24" Margin="88,308,0,0" VerticalAlignment="Top" Width="167" Checked="CheckBox_Checked" Grid.Column="1"/>
+        <CheckBox x:Name="SpecHitchbox" Content="Special Attack" HorizontalAlignment="Left" Height="24" Margin="565,313,0,0" VerticalAlignment="Top" Width="94" Grid.Column="1"/>
+        <CheckBox x:Name="Crithitckbox" Content="Critical Hit" HorizontalAlignment="Left" Height="24" Margin="322,313,0,0" VerticalAlignment="Top" Width="94" Checked="CheckBox_Checked_1" Grid.Column="1"/>
+        <ComboBox x:Name="drpdwneffect" HorizontalAlignment="Left" Height="29" Margin="151,342,0,0" VerticalAlignment="Top" Width="321" SelectionChanged="ComboBox_SelectionChanged_1" Grid.Column="1"/>
+        <Label Content="Effectiveness:" HorizontalAlignment="Left" Height="24" Margin="59,332,0,0" VerticalAlignment="Top" Width="87" Grid.Column="1"/>
+        <TextBox x:Name="txtpokemove" HorizontalAlignment="Left" Height="27" Margin="648,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
+        <Label Content="Move effectiveness: (1-255)" HorizontalAlignment="Left" Height="31" Margin="477,342,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.523,0.646" Grid.Column="1"/>
+        <Button x:Name="fightBut" Content="FIGHT!" HorizontalAlignment="Left" Height="85" Margin="648,19,0,0" VerticalAlignment="Top" Width="144" Click="Button_Click" Grid.Column="1"/>
+        <Label Content="Attacking Pokemon" HorizontalAlignment="Left" Margin="18,24,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+        <Label Content="Defending Pokemon" HorizontalAlignment="Left" Margin="229,19,0,0" VerticalAlignment="Top" Width="123" Grid.Column="1"/>
+        <Label x:Name="FIghtlbl" Content="Maximum:&#xD;&#xA;&#xD;&#xA;Minimum" HorizontalAlignment="Left" Height="139" Margin="634,132,0,0" VerticalAlignment="Top" Width="182" Grid.Column="1"/>
+        <Label x:Name="lblLevelError" Content="&#xD;&#xA;" HorizontalAlignment="Left" Height="29" Margin="648,308,0,0" VerticalAlignment="Top" Width="116" Grid.Column="1"/>
 
     </Grid>
 </Window>

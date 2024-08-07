@@ -21,21 +21,32 @@ namespace battdamageelt
         public int intLevel;
         public int intAttack;
         public int intDefence;
-        public Pokemon(string strNicknameA, int intLevelA, int intAttackA, int intDefenceA)
+        public int intSpecial;
+        public int intHP;
+        public string strType;
+        public Pokemon(string strNicknameA, int intLevelA, int intAttackA, int intDefenceA, int intSpecialA, int inHPA, string strTypeA)
         {
             strNickname = strNicknameA;
             intLevel = intLevelA;
             intAttack = intAttackA;
             intDefence = intDefenceA;
+            intSpecial = intSpecialA;
+            intHP = inHPA;
+            strType = strTypeA;
         }
 
         public string getDescription()
 
         {
-            string strRetVal = "this Pokemon is named: " + strNickname + "\n" + strNickname + "'s level is: " + intLevel;
-            strRetVal += "\n" + strNickname + "/s attack is:" + intAttack;
+            string strRetVal = "Name: " + strNickname + "\n" + "level: " + intLevel;
+            strRetVal += "\n" + "attack: " + intAttack;
+            strRetVal += "\n" + "Defence: " + intDefence;
+            strRetVal += "\n" + "Special: " + intSpecial;
+            strRetVal += "\n" + "HP: " + intHP;
+            strRetVal += "\n" + "Type: " + strType;
             return strRetVal;
 
         }
+
     }
 }
